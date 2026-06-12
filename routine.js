@@ -22,12 +22,57 @@ function splitBarHTML(split) {
 }
 document.getElementById('r-split').innerHTML = splitBarHTML(routine.split);
 
-function videoURL(exName) {
-  const q = encodeURIComponent(exName + ' exercise bodyweight technique');
-  return `https://www.youtube.com/results?search_query=${q}`;
+const tagClass = { upper: 'tag-upper', lower: 'tag-lower', core: 'tag-core' };
+
+// Technique overlay
+const techOverlay = document.createElement('div');
+techOverlay.id = 'technique-overlay';
+techOverlay.innerHTML = `
+  <div class="tech-header">
+    <button class="back-btn" id="tech-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <h2 id="tech-name" class="top-bar-title" style="flex:1"></h2>
+  </div>
+  <div id="tech-body" class="tech-body"></div>`;
+document.body.appendChild(techOverlay);
+
+document.getElementById('tech-close').addEventListener('click', closeTechnique);
+
+function showTechnique(exName) {
+  const libEx = EXERCISES.find(e => e.name.toLowerCase() === exName.toLowerCase());
+  if (!libEx) return;
+  document.getElementById('tech-name').textContent = libEx.name;
+  const videoId = EXERCISE_VIDEOS[libEx.id];
+  const videoHTML = videoId ? `
+    <div class="vid-thumb-wrap">
+      <img class="vid-thumb" src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" alt="${libEx.name}" loading="lazy">
+      <button class="vid-play-btn" aria-label="Play video">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="rgba(31,24,192,0.88)"/><polygon points="20,16 36,24 20,32" fill="white"/></svg>
+      </button>
+    </div>` : '';
+  const tipsHTML = libEx.tips.map(t => `<li>${t}</li>`).join('');
+  const body = document.getElementById('tech-body');
+  body.innerHTML = `
+    ${videoHTML}
+    <p class="lib-card-desc" style="margin-top:16px">${libEx.description}</p>
+    <div class="lib-card-tips-label" style="margin-top:20px;margin-bottom:8px">Technique</div>
+    <ul class="lib-card-tips">${tipsHTML}</ul>`;
+  if (videoId) {
+    body.querySelector('.vid-thumb-wrap').addEventListener('click', () => {
+      body.querySelector('.vid-thumb-wrap').innerHTML =
+        `<iframe class="vid-embed" src="https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    });
+  }
+  techOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
 
-const tagClass = { upper: 'tag-upper', lower: 'tag-lower', core: 'tag-core' };
+function closeTechnique() {
+  techOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+  document.getElementById('tech-body').innerHTML = '';
+}
 
 const phasesEl = document.getElementById('r-phases');
 routine.phases.forEach(phase => {
@@ -46,6 +91,7 @@ routine.phases.forEach(phase => {
       ? `<div class="tags">${ex.muscles.map(m => `<span class="tag ${tagClass[m.k]}">${m.n}</span>`).join('')}</div>`
       : '';
 
+    const hasLib = EXERCISES.some(e => e.name.toLowerCase() === ex.name.toLowerCase());
     card.innerHTML = `
       <div class="ex-left">
         <div class="ex-name">${ex.name}</div>
@@ -54,11 +100,14 @@ routine.phases.forEach(phase => {
       </div>
       <div class="ex-right">
         <div class="ex-sets">${ex.sets}</div>
-        <a href="${videoURL(ex.name)}" target="_blank" class="video-btn" aria-label="Watch ${ex.name} on YouTube">
+        ${hasLib ? `<button class="video-btn" aria-label="Technique for ${ex.name}">
           <svg viewBox="0 0 16 16"><path d="M6.5 4.5l5 3.5-5 3.5V4.5z"/><rect width="14" height="14" x="1" y="1" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          Watch
-        </a>
+          Technique
+        </button>` : ''}
       </div>`;
+    if (hasLib) {
+      card.querySelector('.video-btn').addEventListener('click', () => showTechnique(ex.name));
+    }
     phasesEl.appendChild(card);
   });
 });

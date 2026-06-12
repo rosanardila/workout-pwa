@@ -462,7 +462,9 @@ const EXERCISE_VIDEOS = {
   'plank-to-downward-dog':  'X0T_dBnfxKk',
 };
 
-// ── Favourites ───────────────────────────────────────────────────────
+// ── Library UI (only runs on library.html) ───────────────────────────
+
+if (document.getElementById('exercise-list')) {
 
 const EX_FAVS_KEY = 'exercise_favorites';
 let exFavs = JSON.parse(localStorage.getItem(EX_FAVS_KEY) || '[]');
@@ -583,3 +585,5 @@ function renderExercises() {
 }
 
 renderExercises();
+
+} // end library UI guard

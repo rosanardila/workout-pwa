@@ -925,6 +925,35 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .lib-card .lib-card-tips li { color: rgba(31, 24, 192, 0.62); }
 .lib-card .lib-card-tips-label { color: rgba(31, 24, 192, 0.38); }
 
+/* ── Technique overlay ────────────────────────────────────────────── */
+#technique-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: var(--bg);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+  padding-top: env(safe-area-inset-top);
+}
+#technique-overlay.active { display: block; }
+
+.tech-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--white-10);
+}
+
+.tech-body {
+  padding: 0 16px calc(60px + env(safe-area-inset-bottom));
+}
+
 /* ── Inline video player ──────────────────────────────────────────── */
 .vid-thumb-wrap {
   position: relative;
