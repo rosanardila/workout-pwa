@@ -62,7 +62,7 @@ function showTechnique(exName) {
     body.querySelector('.vid-thumb-wrap').addEventListener('click', () => {
       const start = EXERCISE_STARTS[libEx.id] ? `&start=${EXERCISE_STARTS[libEx.id]}` : '';
       body.querySelector('.vid-thumb-wrap').innerHTML =
-        `<iframe class="vid-embed" src="https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1${start}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        `<iframe class="vid-embed" src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1${start}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
     });
   }
   techOverlay.classList.add('active');

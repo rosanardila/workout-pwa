@@ -592,7 +592,7 @@ function renderExercises() {
       vidWrap.addEventListener('click', () => {
         const id = EXERCISE_VIDEOS[ex.id];
         const start = EXERCISE_STARTS[ex.id] ? `&start=${EXERCISE_STARTS[ex.id]}` : '';
-        vidWrap.innerHTML = `<iframe class="vid-embed" src="https://www.youtube.com/embed/${id}?autoplay=1&playsinline=1${start}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        vidWrap.innerHTML = `<iframe class="vid-embed" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1${start}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
       });
     }
 
