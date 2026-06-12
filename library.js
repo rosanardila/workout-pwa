@@ -427,7 +427,22 @@ const EXERCISES = [
   }
 ];
 
-// ── Video IDs ─────────────────────────────────────────────────────────
+// ── Video IDs & start times (seconds) ────────────────────────────────
+
+const EXERCISE_STARTS = {
+  'squat':                35,
+  'bulgarian-split-squat':45,
+  'glute-bridge':         15,
+  'reverse-lunge':        20,
+  'push-up':              55,
+  'diamond-push-up':      40,
+  'pike-push-up':         12,
+  'table-row-overhand':   72,
+  'tricep-dip':           35,
+  'plank':                50,
+  'hollow-body-hold':     62,
+  'dead-bug':             48,
+};
 
 const EXERCISE_VIDEOS = {
   'squat':                  'RClKKQqsvXA',
@@ -576,7 +591,8 @@ function renderExercises() {
     if (vidWrap) {
       vidWrap.addEventListener('click', () => {
         const id = EXERCISE_VIDEOS[ex.id];
-        vidWrap.innerHTML = `<iframe class="vid-embed" src="https://www.youtube.com/embed/${id}?autoplay=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        const start = EXERCISE_STARTS[ex.id] ? `&start=${EXERCISE_STARTS[ex.id]}` : '';
+        vidWrap.innerHTML = `<iframe class="vid-embed" src="https://www.youtube.com/embed/${id}?autoplay=1&playsinline=1${start}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
       });
     }
 
