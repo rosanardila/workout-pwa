@@ -599,10 +599,10 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   width: 12px; height: 12px;
   flex-shrink: 0;
 }
-.sport-run   { background: rgba(22,163,74,0.10);  color: #16A34A; }
-.sport-swim  { background: rgba(3,105,161,0.10);   color: #0369A1; }
-.sport-cycle { background: rgba(234,88,12,0.10);   color: #EA580C; }
-.sport-all   { background: var(--surface2);         color: var(--text2); }
+.sport-run, .sport-swim, .sport-cycle, .sport-all {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
 
 /* Hub cards */
 .routine-card {
@@ -688,6 +688,129 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   color: var(--text2);
 }
 .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* Hub nav (history + library buttons) */
+.hub-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* Top bar titles (library / history pages) */
+.top-bar-titles { flex: 1; }
+.top-bar-title { font-size: 22px; font-weight: 800; }
+
+/* Library tabs */
+.lib-tabs {
+  display: flex;
+  gap: 6px;
+  margin: 16px 0 4px;
+}
+.lib-tab {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text2);
+  background: var(--surface2);
+  transition: all 0.15s;
+}
+.lib-tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+.lib-tab:active { opacity: 0.85; }
+
+/* Library exercise cards */
+.lib-card {
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.lib-card:active { border-color: var(--accent); }
+.lib-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+.lib-card-info { flex: 1; min-width: 0; }
+.lib-card-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.lib-card-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+.lib-cat-tag {
+  font-size: 10px;
+  padding: 2px 7px;
+}
+.lib-card-muscles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+.lib-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.ex-chevron {
+  width: 18px; height: 18px;
+  stroke: var(--text3);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s;
+}
+.lib-card.expanded .ex-chevron { transform: rotate(90deg); }
+.lib-card-body {
+  display: none;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.lib-card.expanded .lib-card-body { display: block; }
+.lib-card-desc {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.lib-card-tips-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text2);
+  margin-bottom: 8px;
+}
+.lib-card-tips {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.lib-card-tips li {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.5;
+}
 
 /* Done screen */
 .done-screen {

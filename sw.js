@@ -1,14 +1,16 @@
-const CACHE = 'workout-v9';
+const CACHE = 'workout-v10';
 const ASSETS = [
   './',
   './index.html',
   './routine.html',
   './history.html',
+  './library.html',
   './data.js',
   './style.css',
   './app.js',
   './routine.js',
   './history.js',
+  './library.js',
   './manifest.json',
   './favicon.svg',
   './apple-touch-icon-v2.png'
