@@ -430,7 +430,7 @@ const EXERCISES = [
 // ── Video IDs ─────────────────────────────────────────────────────────
 
 const EXERCISE_VIDEOS = {
-  'squat':                  'X00VpP_m8_w',
+  'squat':                  'gztVU_ASwd8',
   'bulgarian-split-squat':  'uZEKJU-g0Sg',
   'romanian-deadlift':      'ecuZtKTNI9U',
   'glute-bridge':           '8bbE6aorw9Y',
