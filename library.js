@@ -430,8 +430,8 @@ const EXERCISES = [
 // ── Video IDs ─────────────────────────────────────────────────────────
 
 const EXERCISE_VIDEOS = {
-  'squat':                  'dhhN_6B5nxE',
-  'bulgarian-split-squat':  'dLPUEhOe7EI',
+  'squat':                  'K6mEOS7wV0U',
+  'bulgarian-split-squat':  '3Z_Nid9L4wE',
   'romanian-deadlift':      'ecuZtKTNI9U',
   'glute-bridge':           'X_IGw8U_e38',
   'single-leg-glute-bridge':'cSzpMpxRnjc',
@@ -442,7 +442,7 @@ const EXERCISE_VIDEOS = {
   'single-leg-calf-raise':  'xXltjBKpNOI',
   'deficit-calf-raise':     'cjS0bn7A29s',
   'seated-calf-raise':      '4f_-CJVbyxg',
-  'push-up':                'wD1M-f69Yy8',
+  'push-up':                'Bg8_Z97-v_k',
   'wide-push-up':           'B-wzr02OO1g',
   'diamond-push-up':        'PPTj-MW2tcs',
   'pike-push-up':           '0cT6ug3WVn4',
@@ -451,7 +451,7 @@ const EXERCISE_VIDEOS = {
   'tricep-dip':             '4ua3MzaU0QU',
   'superman-hold':          'uexOGyxLr7E',
   'push-up-shoulder-tap':   'DaNXSDvr468',
-  'plank':                  'oPgZR4jlZi4',
+  'plank':                  '4b_tXlY2W3g',
   'side-plank':             'sH5PiIUjDW8',
   'hollow-body-hold':       'KgkU7yAEW90',
   'bicycle-crunch':         'hP-ol0LxLZ8',
