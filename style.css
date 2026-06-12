@@ -910,6 +910,12 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 /* ── Exercise card internals (routine page) ── */
 .ex-card .ex-name { color: #1F18C0; }
+.ex-card .video-btn {
+  background: rgba(31, 24, 192, 0.08);
+  color: #1F18C0;
+  border: 1px solid rgba(31, 24, 192, 0.16);
+}
+.ex-card .video-btn svg { fill: #1F18C0; }
 
 /* ── Muscle tag overrides inside white cards ── */
 .routine-card .tag-upper,
@@ -950,6 +956,24 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .lib-card .lib-card-desc   { color: rgba(31, 24, 192, 0.62); }
 .lib-card .lib-card-tips li { color: rgba(31, 24, 192, 0.62); }
 .lib-card .lib-card-tips-label { color: rgba(31, 24, 192, 0.38); }
+
+.lib-watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1F18C0;
+  background: rgba(31, 24, 192, 0.08);
+  border: 1px solid rgba(31, 24, 192, 0.16);
+  border-radius: 999px;
+  padding: 7px 14px;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.lib-watch-btn:active { opacity: 0.7; }
+.lib-watch-btn svg { width: 13px; height: 13px; fill: #1F18C0; flex-shrink: 0; }
 
 /* ── History card internals ── */
 .history-card .history-chevron     { stroke: rgba(31, 24, 192, 0.22); }

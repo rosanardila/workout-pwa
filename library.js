@@ -429,6 +429,10 @@ const EXERCISES = [
 
 // ── Favourites ───────────────────────────────────────────────────────
 
+function watchURL(name) {
+  return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(name + ' technique bodyweight');
+}
+
 const EX_FAVS_KEY = 'exercise_favorites';
 let exFavs = JSON.parse(localStorage.getItem(EX_FAVS_KEY) || '[]');
 
@@ -512,6 +516,10 @@ function renderExercises() {
         <p class="lib-card-desc">${ex.description}</p>
         <div class="lib-card-tips-label">Technique</div>
         <ul class="lib-card-tips">${tipItems}</ul>
+        <a href="${watchURL(ex.name)}" target="_blank" class="lib-watch-btn" aria-label="Watch ${ex.name} on YouTube">
+          <svg viewBox="0 0 16 16"><path d="M6.5 4.5l5 3.5-5 3.5V4.5z"/><rect width="14" height="14" x="1" y="1" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          Watch on YouTube
+        </a>
       </div>`;
 
     const header = card.querySelector('.lib-card-header');
