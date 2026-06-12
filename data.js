@@ -3,6 +3,8 @@ const ROUTINES = [
     id: 1,
     title: "Strength base",
     tag: "Routine 1",
+    duration: 30,
+    sport: 'all',
     focus: "Controlled tempo · Foundational strength",
     split: { upper: 22, lower: 44, core: 33 },
     tip: "3 sec down on every exercise. Slow negatives are where most of the muscle stimulus happens.",
@@ -40,6 +42,8 @@ const ROUTINES = [
     id: 2,
     title: "Stability & balance",
     tag: "Routine 2",
+    duration: 30,
+    sport: 'run',
     focus: "Single-leg work · Great for runners",
     split: { upper: 33, lower: 44, core: 22 },
     tip: "Balance work is harder than it looks. Use a hand on the wall if needed — the goal is good form, not pride.",
@@ -77,6 +81,8 @@ const ROUTINES = [
     id: 3,
     title: "Posterior chain",
     tag: "Routine 3",
+    duration: 30,
+    sport: 'swim',
     focus: "Glutes · Hamstrings · Back",
     split: { upper: 33, lower: 33, core: 33 },
     tip: "Swimmers and runners tend to have strong quads but weaker posterior chains. This routine helps balance that out.",
@@ -114,6 +120,8 @@ const ROUTINES = [
     id: 4,
     title: "Endurance circuit",
     tag: "Routine 4",
+    duration: 30,
+    sport: 'cycle',
     focus: "Lower rest · Higher reps · Muscular endurance",
     split: { upper: 33, lower: 33, core: 33 },
     tip: "Rest only 30 sec between exercises. If something feels too easy, slow the tempo right down rather than adding reps.",
@@ -151,6 +159,8 @@ const ROUTINES = [
     id: 5,
     title: "Lower body",
     tag: "Routine 5",
+    duration: 30,
+    sport: 'run',
     focus: "Quads · Glutes · Hamstrings · Calves",
     split: { upper: 8, lower: 76, core: 16 },
     tip: "Drive through your heels on every pushing movement. For split squats, front knee tracks over your second toe — never caving inward.",
@@ -188,6 +198,8 @@ const ROUTINES = [
     id: 6,
     title: "Upper body",
     tag: "Routine 6",
+    duration: 30,
+    sport: 'swim',
     focus: "Chest · Back · Shoulders · Arms",
     split: { upper: 76, lower: 8, core: 16 },
     tip: "Elbow position defines the exercise: wide elbows for chest, narrow for triceps, forward for shoulders. Follow the elbow, not the rep count.",
@@ -225,6 +237,8 @@ const ROUTINES = [
     id: 7,
     title: "Core",
     tag: "Routine 7",
+    duration: 30,
+    sport: 'all',
     focus: "Abs · Obliques · Lower back",
     split: { upper: 8, lower: 8, core: 84 },
     tip: "If you feel your lower back arching or your neck pulling, you've exceeded your range — reduce range of motion before reducing reps. Core work is about control, not speed.",
@@ -262,6 +276,8 @@ const ROUTINES = [
     id: 8,
     title: "Flexibility & mobility",
     tag: "Routine 8",
+    duration: 30,
+    sport: 'all',
     focus: "Full-body range of motion",
     split: { upper: 28, lower: 42, core: 30 },
     tip: "Stretch to tension, not pain. Breathe into each position and let gravity do the work — forcing a stretch creates tightness, not flexibility.",
@@ -299,6 +315,8 @@ const ROUTINES = [
     id: 9,
     title: "Strength + calves",
     tag: "Routine 9",
+    duration: 30,
+    sport: 'all',
     focus: "Structural strength · Calf endurance · Core control",
     split: { upper: 35, lower: 45, core: 20 },
     tip: "Calf raises done slowly are twice the work — 3 seconds down, pause at the bottom, full extension at the top. Skip the bounce.",
@@ -334,6 +352,8 @@ const ROUTINES = [
     id: 10,
     title: "Runner's armor",
     tag: "Routine 10",
+    duration: 30,
+    sport: 'run',
     focus: "Single-leg stability · Achilles strength · Joint protection",
     split: { upper: 30, lower: 45, core: 25 },
     tip: "Deficit calf raises need a step or thick book — the extra depth loads the Achilles through its full range. Ease in gently the first session.",
@@ -369,6 +389,8 @@ const ROUTINES = [
     id: 11,
     title: "Posterior + soleus",
     tag: "Routine 11",
+    duration: 30,
+    sport: 'cycle',
     focus: "Hamstrings · Glutes · Deep calf (soleus)",
     split: { upper: 15, lower: 60, core: 25 },
     tip: "Seated calf raises target the soleus (the deep muscle under the gastrocnemius) — place a heavy object on your thighs for resistance. Both calf heads matter for preventing injuries.",
@@ -404,6 +426,8 @@ const ROUTINES = [
     id: 12,
     title: "Control & coordination",
     tag: "Routine 12",
+    duration: 30,
+    sport: 'swim',
     focus: "Multi-directional movement · Anti-extension core",
     split: { upper: 30, lower: 45, core: 25 },
     tip: "Hollow body hold is a non-negotiable swimmer's drill. If your lower back leaves the floor, bend your knees slightly — never let the arch happen.",
@@ -431,6 +455,470 @@ const ROUTINES = [
         exercises: [
           { name: "Lying hamstring stretch", note: "Loop a towel around foot if needed",  sets: "45 sec each", rest: 10, work: 45, muscles: [] },
           { name: "Supine spinal twist",     note: "Both shoulders on floor, breathe out to deepen", sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+        ]
+      }
+    ]
+  },
+
+  // ── 45-min routines ──────────────────────────────────────────────────
+
+  {
+    id: 13,
+    title: "Full body — extended",
+    tag: "Routine 13",
+    duration: 45,
+    sport: 'all',
+    focus: "Complete coverage · 4-set progression",
+    split: { upper: 33, lower: 34, core: 33 },
+    tip: "4 sets per exercise instead of 3. The extra set is where the adaptation actually happens — keep the tempo slow on the extra set even when you're tired.",
+    phases: [
+      {
+        label: "Warm-up", duration: "8 min",
+        exercises: [
+          { name: "Inchworm",                note: "Walk hands to plank and back",         sets: "8 reps",           rest: 20, work: 40, muscles: [] },
+          { name: "World's greatest stretch", note: "Hip flexor + thoracic rotation",        sets: "6 each side",      rest: 20, work: 45, muscles: [] },
+          { name: "Hip circles",             note: "Standing, big deliberate circles",      sets: "10 each side",     rest: 15, work: 30, muscles: [] },
+          { name: "Arm circles",             note: "Small to large, forward then backward", sets: "20 each direction", rest: 15, work: 25, muscles: [] },
+          { name: "Cat-cow",                 note: "Slow spinal wave, breathe into it",     sets: "10 reps",          rest: 15, work: 30, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "30 min",
+        exercises: [
+          { name: "Squat",               note: "3 sec down, full depth, chest up",            sets: "4 × 12",          rest: 60, work: 45, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"lower",n:"Hamstrings"}] },
+          { name: "Push-up",             note: "Elbows at 45°, 3 sec down",                   sets: "4 × 10",          rest: 60, work: 40, muscles: [{k:"upper",n:"Chest"},{k:"upper",n:"Shoulders"},{k:"upper",n:"Triceps"}] },
+          { name: "Table row (overhand)",note: "Pull chest to edge, hold 1 sec at top",        sets: "4 × 10",          rest: 60, work: 45, muscles: [{k:"upper",n:"Upper back"},{k:"upper",n:"Biceps"},{k:"upper",n:"Lats"}] },
+          { name: "Reverse lunge",       note: "Step back, knee hovers above floor",           sets: "4 × 10 each",     rest: 60, work: 50, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Core stability"}] },
+          { name: "Glute bridge",        note: "Squeeze at top for 2 sec, lower slowly",       sets: "3 × 15",          rest: 60, work: 45, muscles: [{k:"lower",n:"Glutes"},{k:"lower",n:"Hamstrings"},{k:"core",n:"Lower back"}] },
+          { name: "Plank",               note: "Elbows under shoulders, squeeze everything",    sets: "3 × 50 sec",      rest: 60, work: 50, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Obliques"},{k:"upper",n:"Shoulders"}] },
+          { name: "Superman hold",       note: "Prone, lift arms + legs, hold 2 sec",          sets: "3 × 12",          rest: 60, work: 40, muscles: [{k:"upper",n:"Upper back"},{k:"upper",n:"Rear delts"},{k:"core",n:"Lower back"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "7 min",
+        exercises: [
+          { name: "Pigeon pose",              note: "Deep hip flexor + glute release",   sets: "75 sec each", rest: 10, work: 75, muscles: [] },
+          { name: "Seated forward fold",      note: "Hinge from hips, spine long",        sets: "60 sec",      rest: 10, work: 60, muscles: [] },
+          { name: "Spinal twist",             note: "Lying, knees drop side to side",     sets: "45 sec each", rest: 10, work: 45, muscles: [] },
+          { name: "Chest & shoulder stretch", note: "Hands clasped behind back",          sets: "45 sec",      rest: 10, work: 45, muscles: [] },
+        ]
+      }
+    ]
+  },
+  {
+    id: 14,
+    title: "Running strength",
+    tag: "Routine 14",
+    duration: 45,
+    sport: 'run',
+    focus: "Single-leg power · Hip stability · Impact absorption",
+    split: { upper: 12, lower: 65, core: 23 },
+    tip: "Running injuries almost always start with a single-leg imbalance. Work the weaker leg first every set — identify it in the Bulgarian split squat.",
+    phases: [
+      {
+        label: "Warm-up", duration: "8 min",
+        exercises: [
+          { name: "Leg swings",               note: "Forward/back and side-to-side, hold wall",  sets: "12 each direction", rest: 15, work: 30, muscles: [] },
+          { name: "Hip circles",              note: "Standing, big controlled circles",           sets: "10 each side",      rest: 15, work: 30, muscles: [] },
+          { name: "World's greatest stretch", note: "Hip flexor + thoracic rotation",             sets: "6 each side",       rest: 20, work: 45, muscles: [] },
+          { name: "Glute activation walk",    note: "Mini lateral steps, tension on hips",        sets: "30 steps each way", rest: 15, work: 30, muscles: [] },
+          { name: "Bodyweight squat",         note: "Slow and controlled, full depth",            sets: "12 reps",           rest: 20, work: 40, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "30 min",
+        exercises: [
+          { name: "Bulgarian split squat",  note: "Front thigh parallel to floor",                sets: "4 × 10 each",  rest: 75, work: 50, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Hip stabilisers"}] },
+          { name: "Romanian deadlift",      note: "Hinge at hips, soft knee, feel hamstrings",    sets: "4 × 12",       rest: 60, work: 40, muscles: [{k:"lower",n:"Hamstrings"},{k:"lower",n:"Glutes"},{k:"core",n:"Lower back"}] },
+          { name: "Single-leg glute bridge",note: "One foot raised, drive through heel",          sets: "4 × 12 each",  rest: 60, work: 50, muscles: [{k:"lower",n:"Glutes"},{k:"lower",n:"Hamstrings"},{k:"core",n:"Core stability"}] },
+          { name: "Reverse lunge + knee drive", note: "Step back, drive knee up explosively on return", sets: "3 × 12 each", rest: 60, work: 50, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Hip flexors"}] },
+          { name: "Wall sit",               note: "90° at knees, back flat on wall",              sets: "3 × 60 sec",   rest: 60, work: 60, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"lower",n:"Calves"}] },
+          { name: "Single-leg calf raise",  note: "3 sec lowering, full range, hold wall",        sets: "4 × 15 each",  rest: 45, work: 40, muscles: [{k:"lower",n:"Calves"},{k:"lower",n:"Ankle stabilisers"}] },
+          { name: "Dead bug",               note: "Lower back glued flat, opposite arm + leg",    sets: "3 × 10 each",  rest: 60, work: 40, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"},{k:"core",n:"Core stability"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "7 min",
+        exercises: [
+          { name: "Pigeon pose",           note: "Deep glute + hip flexor release",    sets: "75 sec each", rest: 10, work: 75, muscles: [] },
+          { name: "Standing quad stretch", note: "Hold wall for balance",              sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Seated forward fold",   note: "Hamstrings + lower back",            sets: "60 sec",      rest: 10, work: 60, muscles: [] },
+          { name: "Figure-4 stretch",      note: "Cross ankle over knee, flex foot",   sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+        ]
+      }
+    ]
+  },
+  {
+    id: 15,
+    title: "Swimmer's strength",
+    tag: "Routine 15",
+    duration: 45,
+    sport: 'swim',
+    focus: "Pulling chain · Shoulder stability · Rotational core",
+    split: { upper: 57, lower: 10, core: 33 },
+    tip: "Swimmers are typically strong in internal shoulder rotation but weak in external. The superman and rear-delt work here addresses that imbalance directly.",
+    phases: [
+      {
+        label: "Warm-up", duration: "8 min",
+        exercises: [
+          { name: "Arm circles",       note: "Small to large, forward then backward",  sets: "20 each direction", rest: 15, work: 30, muscles: [] },
+          { name: "Shoulder rolls",    note: "Slow and full range of motion",           sets: "12 reps",           rest: 15, work: 20, muscles: [] },
+          { name: "Thoracic rotation", note: "Seated, hands behind head, rotate slow",  sets: "10 each side",      rest: 20, work: 30, muscles: [] },
+          { name: "Cat-cow",           note: "Flowing spinal wave, 4 sec each way",     sets: "10 reps",           rest: 15, work: 30, muscles: [] },
+          { name: "Thread-the-needle", note: "On all fours, thread arm through, hold",  sets: "45 sec each",       rest: 10, work: 45, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "30 min",
+        exercises: [
+          { name: "Table row (overhand)",  note: "Pull chest to edge, hold 1 sec at top",              sets: "4 × 12",    rest: 60, work: 45, muscles: [{k:"upper",n:"Upper back"},{k:"upper",n:"Biceps"},{k:"upper",n:"Lats"}] },
+          { name: "Wide push-up",          note: "Hands wider than shoulders, chest to floor",         sets: "4 × 12",    rest: 60, work: 40, muscles: [{k:"upper",n:"Chest"},{k:"upper",n:"Shoulders"},{k:"upper",n:"Triceps"}] },
+          { name: "Table row (underhand)", note: "Underhand grip — different pull angle",              sets: "3 × 12",    rest: 60, work: 45, muscles: [{k:"upper",n:"Lats"},{k:"upper",n:"Biceps"},{k:"upper",n:"Upper back"}] },
+          { name: "Pike push-up",          note: "Hips high, lower head toward floor between hands",   sets: "4 × 10",    rest: 60, work: 35, muscles: [{k:"upper",n:"Shoulders"},{k:"upper",n:"Triceps"},{k:"upper",n:"Upper back"}] },
+          { name: "Superman hold",         note: "Prone, lift everything, hold 3 sec at top",          sets: "4 × 12",    rest: 60, work: 40, muscles: [{k:"upper",n:"Upper back"},{k:"upper",n:"Rear delts"},{k:"core",n:"Lower back"}] },
+          { name: "Hollow body hold",      note: "Back flat, arms and legs low but not touching",      sets: "3 × 40 sec", rest: 60, work: 40, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"},{k:"core",n:"Core stability"}] },
+          { name: "Side plank",            note: "Stack or stagger feet, hips lifted throughout",      sets: "3 × 40 sec each", rest: 60, work: 40, muscles: [{k:"core",n:"Obliques"},{k:"core",n:"Abs"},{k:"upper",n:"Shoulders"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "7 min",
+        exercises: [
+          { name: "Chest doorframe stretch",    note: "One arm on doorframe, rotate body away",  sets: "45 sec each", rest: 10, work: 45, muscles: [] },
+          { name: "Cross-body shoulder stretch",note: "Pull arm across chest, hold at elbow",    sets: "45 sec each", rest: 10, work: 45, muscles: [] },
+          { name: "Thread-the-needle",          note: "Thoracic rotation on all fours",          sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Chest opener",               note: "Arms out in T, let chest open to floor",  sets: "60 sec",      rest: 10, work: 60, muscles: [] },
+        ]
+      }
+    ]
+  },
+  {
+    id: 16,
+    title: "Cyclist's legs",
+    tag: "Routine 16",
+    duration: 45,
+    sport: 'cycle',
+    focus: "Quad endurance · Glute power · Hip flexibility",
+    split: { upper: 8, lower: 68, core: 24 },
+    tip: "Cyclists develop very strong quads but tight hip flexors and weak glutes. This session deliberately hits the posterior chain and hip flexors in equal measure.",
+    phases: [
+      {
+        label: "Warm-up", duration: "8 min",
+        exercises: [
+          { name: "Hip flexor lunge hold", note: "Deep lunge, arms overhead",           sets: "45 sec each side",  rest: 10, work: 45, muscles: [] },
+          { name: "Glute activation walk", note: "Mini lateral steps, tension on hips", sets: "30 steps each way", rest: 15, work: 30, muscles: [] },
+          { name: "Bodyweight squat",      note: "Controlled, full depth",               sets: "12 reps",           rest: 20, work: 40, muscles: [] },
+          { name: "Hip circles",           note: "Standing, big circles",                sets: "10 each side",      rest: 15, work: 30, muscles: [] },
+          { name: "Leg swings",            note: "Forward/back and side-to-side",        sets: "12 each direction", rest: 15, work: 30, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "30 min",
+        exercises: [
+          { name: "Bulgarian split squat",  note: "Rear foot on chair, front thigh parallel",         sets: "4 × 10 each",  rest: 75, work: 50, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Hip stabilisers"}] },
+          { name: "Hip hinge (good morning)",note: "Flat back, hinge at hips, feel hamstrings",       sets: "4 × 12",       rest: 60, work: 40, muscles: [{k:"lower",n:"Hamstrings"},{k:"lower",n:"Glutes"},{k:"core",n:"Lower back"}] },
+          { name: "Sumo squat",             note: "Wide stance, toes out 45°, sit deep",              sets: "4 × 15",       rest: 60, work: 45, muscles: [{k:"lower",n:"Inner thighs"},{k:"lower",n:"Glutes"},{k:"lower",n:"Quads"}] },
+          { name: "Wall sit",               note: "90° at knees, back flat, hold full duration",      sets: "4 × 60 sec",   rest: 60, work: 60, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"lower",n:"Calves"}] },
+          { name: "Glute bridge with march", note: "Bridge hold, alternate lifting each knee",        sets: "3 × 12 each",  rest: 60, work: 45, muscles: [{k:"lower",n:"Glutes"},{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"}] },
+          { name: "Single-leg calf raise",  note: "Full range, 3 sec lowering, hold wall",            sets: "4 × 12 each",  rest: 45, work: 40, muscles: [{k:"lower",n:"Calves"},{k:"lower",n:"Ankle stabilisers"}] },
+          { name: "Bird dog",               note: "Opposite arm + leg, hold 3 sec, zero rotation",   sets: "3 × 10 each",  rest: 60, work: 40, muscles: [{k:"core",n:"Lower back"},{k:"core",n:"Core stability"},{k:"lower",n:"Glutes"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "7 min",
+        exercises: [
+          { name: "Pigeon pose",           note: "Deep glute + hip flexor release",   sets: "75 sec each", rest: 10, work: 75, muscles: [] },
+          { name: "Standing quad stretch", note: "Hold wall, pull heel to glute",     sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Seated forward fold",   note: "Hinge from hips, spine long",       sets: "60 sec",      rest: 10, work: 60, muscles: [] },
+          { name: "Child's pose",          note: "Arms forward, breathe into lower back", sets: "60 sec",  rest: 10, work: 60, muscles: [] },
+        ]
+      }
+    ]
+  },
+  {
+    id: 17,
+    title: "Core power",
+    tag: "Routine 17",
+    duration: 45,
+    sport: 'all',
+    focus: "Anti-extension · Anti-rotation · Full core integration",
+    split: { upper: 10, lower: 10, core: 80 },
+    tip: "Every core exercise is also a breathing exercise. Exhale sharply on the effort, inhale on the recovery. Controlled breathing doubles the muscle engagement.",
+    phases: [
+      {
+        label: "Warm-up", duration: "8 min",
+        exercises: [
+          { name: "Cat-cow",           note: "Slow, breathe into each position",              sets: "12 reps",      rest: 15, work: 30, muscles: [] },
+          { name: "Dead bug hold",     note: "Flatten lower back to floor, hold the brace",   sets: "15 sec × 3",   rest: 15, work: 30, muscles: [] },
+          { name: "Knee-to-chest",     note: "Lying, alternate drawing each knee in slowly",  sets: "12 each side", rest: 15, work: 30, muscles: [] },
+          { name: "Thoracic rotation", note: "Seated, hands behind head, rotate slowly",      sets: "10 each side", rest: 20, work: 30, muscles: [] },
+          { name: "Hip circles",       note: "Standing, big controlled circles",              sets: "10 each side", rest: 15, work: 30, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "30 min",
+        exercises: [
+          { name: "Plank",           note: "Elbows under shoulders, squeeze everything",                  sets: "4 × 50 sec",       rest: 60, work: 50, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Obliques"},{k:"upper",n:"Shoulders"}] },
+          { name: "Hollow body hold",note: "Lower back flat, arms and legs low but not touching",         sets: "4 × 35 sec",       rest: 60, work: 35, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"},{k:"core",n:"Core stability"}] },
+          { name: "Side plank",      note: "Stack or stagger feet, lift hip fully",                       sets: "4 × 35 sec each",  rest: 60, work: 35, muscles: [{k:"core",n:"Obliques"},{k:"core",n:"Abs"},{k:"upper",n:"Shoulders"}] },
+          { name: "Bicycle crunch",  note: "Slow and deliberate, full twist, no neck strain",             sets: "4 × 15 each side", rest: 60, work: 45, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Obliques"},{k:"core",n:"Hip flexors"}] },
+          { name: "Dead bug",        note: "Opposite arm + leg, lower back glued flat",                   sets: "4 × 10 each side", rest: 60, work: 40, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"},{k:"core",n:"Core stability"}] },
+          { name: "Leg raise",       note: "Hands under lower back, lower legs slowly — don't arch",      sets: "4 × 12",           rest: 60, work: 35, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"},{k:"lower",n:"Quads"}] },
+          { name: "Bird dog",        note: "Opposite arm + leg, hold 3 sec, zero hip rotation",          sets: "3 × 12 each side", rest: 60, work: 40, muscles: [{k:"core",n:"Lower back"},{k:"core",n:"Core stability"},{k:"lower",n:"Glutes"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "7 min",
+        exercises: [
+          { name: "Child's pose",            note: "Arms forward, breathe into lower back",       sets: "60 sec",      rest: 10, work: 60, muscles: [] },
+          { name: "Cobra stretch",           note: "Hips down, arms push chest up",               sets: "45 sec",      rest: 10, work: 45, muscles: [] },
+          { name: "Supine spinal twist",     note: "Both shoulders on floor, breathe out deep",   sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Diaphragmatic breathing", note: "4 sec in, 6 sec out — full reset",            sets: "8 breaths",   rest: 10, work: 50, muscles: [] },
+        ]
+      }
+    ]
+  },
+
+  // ── 60-min routines ──────────────────────────────────────────────────
+
+  {
+    id: 18,
+    title: "Full body volume",
+    tag: "Routine 18",
+    duration: 60,
+    sport: 'all',
+    focus: "High volume · Complete muscle coverage · 4-set base",
+    split: { upper: 33, lower: 34, core: 33 },
+    tip: "Volume beats intensity for general fitness. 4 sets at 70% beats 3 sets at max effort and leaves you recovered for your next sport session.",
+    phases: [
+      {
+        label: "Warm-up", duration: "10 min",
+        exercises: [
+          { name: "Inchworm",                 note: "Walk hands to plank and back",         sets: "10 reps",           rest: 20, work: 40, muscles: [] },
+          { name: "World's greatest stretch",  note: "Hip flexor + thoracic rotation",       sets: "8 each side",       rest: 20, work: 45, muscles: [] },
+          { name: "Hip circles",              note: "Standing, big deliberate circles",      sets: "12 each side",      rest: 15, work: 30, muscles: [] },
+          { name: "Arm circles",              note: "Small to large, both directions",       sets: "20 each direction",  rest: 15, work: 25, muscles: [] },
+          { name: "Leg swings",               note: "Forward/back then side-to-side",        sets: "12 each direction",  rest: 15, work: 30, muscles: [] },
+          { name: "Cat-cow",                  note: "Slow spinal wave, breathe into it",     sets: "12 reps",           rest: 15, work: 30, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "40 min",
+        exercises: [
+          { name: "Squat",                   note: "3 sec down, full depth, chest up",              sets: "4 × 15",          rest: 60, work: 45, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"lower",n:"Hamstrings"}] },
+          { name: "Push-up",                 note: "Elbows at 45°, controlled tempo",               sets: "4 × 12",          rest: 60, work: 40, muscles: [{k:"upper",n:"Chest"},{k:"upper",n:"Shoulders"},{k:"upper",n:"Triceps"}] },
+          { name: "Table row (overhand)",    note: "Pull chest to edge, hold 1 sec at top",          sets: "4 × 12",          rest: 60, work: 45, muscles: [{k:"upper",n:"Upper back"},{k:"upper",n:"Biceps"},{k:"upper",n:"Lats"}] },
+          { name: "Reverse lunge",           note: "Step back, knee hovers above floor",             sets: "4 × 12 each",     rest: 60, work: 50, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Core stability"}] },
+          { name: "Bulgarian split squat",   note: "Rear foot on chair, front thigh parallel",       sets: "3 × 10 each",     rest: 75, work: 50, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Hip stabilisers"}] },
+          { name: "Table row (underhand)",   note: "Underhand grip — different pull angle",          sets: "3 × 12",          rest: 60, work: 45, muscles: [{k:"upper",n:"Lats"},{k:"upper",n:"Biceps"},{k:"upper",n:"Upper back"}] },
+          { name: "Glute bridge with march", note: "Bridge hold, alternate lifting each knee",        sets: "3 × 12 each",     rest: 60, work: 45, muscles: [{k:"lower",n:"Glutes"},{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"}] },
+          { name: "Pike push-up",            note: "Hips high, lower head toward floor",              sets: "3 × 10",          rest: 60, work: 35, muscles: [{k:"upper",n:"Shoulders"},{k:"upper",n:"Triceps"},{k:"upper",n:"Upper back"}] },
+          { name: "Plank",                   note: "Elbows under shoulders, straight line",           sets: "3 × 50 sec",      rest: 60, work: 50, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Obliques"},{k:"upper",n:"Shoulders"}] },
+          { name: "Side plank",              note: "Stack or stagger feet, hips lifted",              sets: "3 × 40 sec each", rest: 60, work: 40, muscles: [{k:"core",n:"Obliques"},{k:"core",n:"Abs"},{k:"upper",n:"Shoulders"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "10 min",
+        exercises: [
+          { name: "Pigeon pose",              note: "Deep hip flexor + glute release",    sets: "90 sec each", rest: 10, work: 90, muscles: [] },
+          { name: "Seated forward fold",      note: "Hinge from hips, spine long",         sets: "75 sec",      rest: 10, work: 75, muscles: [] },
+          { name: "Spinal twist",             note: "Lying, knees drop side to side",      sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Chest doorframe stretch",  note: "One arm on doorframe, rotate away",   sets: "45 sec each", rest: 10, work: 45, muscles: [] },
+          { name: "Child's pose",             note: "Arms forward, breathe into lower back", sets: "60 sec",    rest: 10, work: 60, muscles: [] },
+          { name: "Diaphragmatic breathing",  note: "4 sec in, 6 sec out — full scan",     sets: "8 breaths",  rest: 10, work: 50, muscles: [] },
+        ]
+      }
+    ]
+  },
+  {
+    id: 19,
+    title: "Complete runner's session",
+    tag: "Routine 19",
+    duration: 60,
+    sport: 'run',
+    focus: "Hip power · Impact resilience · Full lower chain",
+    split: { upper: 12, lower: 63, core: 25 },
+    tip: "Think of this as a strength run. Go at 70% effort, not maximum — you still need to run tomorrow. The adaptation comes from consistent quality, not occasional heroics.",
+    phases: [
+      {
+        label: "Warm-up", duration: "10 min",
+        exercises: [
+          { name: "Leg swings",               note: "Forward/back then side-to-side, hold wall",  sets: "12 each direction", rest: 15, work: 30, muscles: [] },
+          { name: "Hip circles",              note: "Standing, big controlled circles",            sets: "12 each side",      rest: 15, work: 30, muscles: [] },
+          { name: "World's greatest stretch", note: "Hip flexor + thoracic rotation",              sets: "8 each side",       rest: 20, work: 45, muscles: [] },
+          { name: "Glute activation walk",    note: "Mini lateral steps, tension on hips",         sets: "30 steps each way", rest: 15, work: 30, muscles: [] },
+          { name: "Bodyweight squat",         note: "Slow and controlled, full depth",             sets: "15 reps",           rest: 20, work: 40, muscles: [] },
+          { name: "Hip flexor lunge hold",    note: "Deep lunge, arms overhead",                   sets: "30 sec each side",  rest: 10, work: 30, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "40 min",
+        exercises: [
+          { name: "Bulgarian split squat",      note: "Front thigh parallel, 3 sec descent",          sets: "4 × 12 each",  rest: 75, work: 55, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Hip stabilisers"}] },
+          { name: "Romanian deadlift",          note: "Hinge at hips, soft knee, feel hamstrings",     sets: "4 × 12",       rest: 60, work: 40, muscles: [{k:"lower",n:"Hamstrings"},{k:"lower",n:"Glutes"},{k:"core",n:"Lower back"}] },
+          { name: "Single-leg glute bridge",    note: "One foot raised, drive through heel",           sets: "4 × 12 each",  rest: 60, work: 50, muscles: [{k:"lower",n:"Glutes"},{k:"lower",n:"Hamstrings"},{k:"core",n:"Core stability"}] },
+          { name: "Reverse lunge + knee drive", note: "Step back, drive knee up explosively on return", sets: "4 × 12 each", rest: 60, work: 50, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Hip flexors"}] },
+          { name: "Deficit calf raise",         note: "Step or thick book, heels drop below edge",     sets: "4 × 15",       rest: 45, work: 40, muscles: [{k:"lower",n:"Calves"},{k:"lower",n:"Achilles"},{k:"lower",n:"Ankle stabilisers"}] },
+          { name: "Wall sit",                   note: "90° at knees, back flat on wall",               sets: "3 × 60 sec",   rest: 60, work: 60, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"lower",n:"Calves"}] },
+          { name: "Dead bug",                   note: "Lower back glued flat, opposite arm + leg",     sets: "4 × 10 each",  rest: 60, work: 40, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"},{k:"core",n:"Core stability"}] },
+          { name: "Bird dog",                   note: "Opposite arm + leg, hold 3 sec",                sets: "4 × 10 each",  rest: 60, work: 40, muscles: [{k:"core",n:"Lower back"},{k:"core",n:"Core stability"},{k:"lower",n:"Glutes"}] },
+          { name: "Side plank",                 note: "Stack feet or stagger, hips lifted",            sets: "3 × 40 sec each", rest: 60, work: 40, muscles: [{k:"core",n:"Obliques"},{k:"core",n:"Abs"},{k:"upper",n:"Shoulders"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "10 min",
+        exercises: [
+          { name: "Pigeon pose",           note: "Deep glute + hip flexor release",    sets: "90 sec each", rest: 10, work: 90, muscles: [] },
+          { name: "Standing quad stretch", note: "Hold wall for balance",              sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Seated forward fold",   note: "Hamstrings + lower back",            sets: "75 sec",      rest: 10, work: 75, muscles: [] },
+          { name: "Figure-4 stretch",      note: "Cross ankle over knee, flex foot",   sets: "75 sec each", rest: 10, work: 75, muscles: [] },
+          { name: "Lying hamstring stretch",note: "Loop a towel around foot if needed", sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Supine spinal twist",   note: "Both shoulders on floor, breathe deep", sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+        ]
+      }
+    ]
+  },
+  {
+    id: 20,
+    title: "Complete swimmer's session",
+    tag: "Routine 20",
+    duration: 60,
+    sport: 'swim',
+    focus: "Full pulling chain · Shoulder health · Rotational power",
+    split: { upper: 55, lower: 10, core: 35 },
+    tip: "Swimmers who neglect rotational core work end up either over-rotating or under-rotating their stroke. The oblique and anti-rotation work in this session locks in the right pattern.",
+    phases: [
+      {
+        label: "Warm-up", duration: "10 min",
+        exercises: [
+          { name: "Arm circles",       note: "Small to large, forward then backward",  sets: "20 each direction", rest: 15, work: 30, muscles: [] },
+          { name: "Shoulder rolls",    note: "Slow and deliberate, full range",          sets: "12 reps",           rest: 15, work: 20, muscles: [] },
+          { name: "Thoracic rotation", note: "Seated, hands behind head, slow rotation", sets: "12 each side",      rest: 20, work: 30, muscles: [] },
+          { name: "Cat-cow",           note: "Flowing spinal wave, 4 sec each way",      sets: "12 reps",           rest: 15, work: 30, muscles: [] },
+          { name: "Thread-the-needle", note: "On all fours, thread arm through, hold",   sets: "60 sec each",       rest: 10, work: 60, muscles: [] },
+          { name: "Neck rolls",        note: "Slow half-circles, ear to shoulder",        sets: "6 each direction",  rest: 10, work: 30, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "40 min",
+        exercises: [
+          { name: "Table row (overhand)",  note: "Pull chest to edge, hold 1 sec at top",              sets: "4 × 12",          rest: 60, work: 45, muscles: [{k:"upper",n:"Upper back"},{k:"upper",n:"Biceps"},{k:"upper",n:"Lats"}] },
+          { name: "Wide push-up",          note: "Hands wider than shoulders, chest to floor",         sets: "4 × 12",          rest: 60, work: 40, muscles: [{k:"upper",n:"Chest"},{k:"upper",n:"Shoulders"},{k:"upper",n:"Triceps"}] },
+          { name: "Superman hold",         note: "Prone, lift everything, hold 3 sec at top",          sets: "4 × 12",          rest: 60, work: 40, muscles: [{k:"upper",n:"Upper back"},{k:"upper",n:"Rear delts"},{k:"core",n:"Lower back"}] },
+          { name: "Table row (underhand)", note: "Underhand grip — different pull angle",              sets: "4 × 12",          rest: 60, work: 45, muscles: [{k:"upper",n:"Lats"},{k:"upper",n:"Biceps"},{k:"upper",n:"Upper back"}] },
+          { name: "Pike push-up",          note: "Hips high, lower head toward floor between hands",   sets: "4 × 10",          rest: 60, work: 35, muscles: [{k:"upper",n:"Shoulders"},{k:"upper",n:"Triceps"},{k:"upper",n:"Upper back"}] },
+          { name: "Diamond push-up",       note: "Hands together under chest, elbows track back",     sets: "3 × 10",          rest: 60, work: 35, muscles: [{k:"upper",n:"Triceps"},{k:"upper",n:"Chest"},{k:"upper",n:"Shoulders"}] },
+          { name: "Hollow body hold",      note: "Back flat, arms and legs low but not touching",      sets: "4 × 35 sec",      rest: 60, work: 35, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"},{k:"core",n:"Core stability"}] },
+          { name: "Side plank",            note: "Stack or stagger feet, hips lifted",                 sets: "4 × 40 sec each", rest: 60, work: 40, muscles: [{k:"core",n:"Obliques"},{k:"core",n:"Abs"},{k:"upper",n:"Shoulders"}] },
+          { name: "Bicycle crunch",        note: "Slow and deliberate, full twist, no neck strain",    sets: "4 × 15 each side",rest: 60, work: 45, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Obliques"},{k:"core",n:"Hip flexors"}] },
+          { name: "Dead bug",              note: "Lower back glued flat, opposite arm + leg",          sets: "3 × 10 each side",rest: 60, work: 40, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"},{k:"core",n:"Core stability"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "10 min",
+        exercises: [
+          { name: "Chest opener",               note: "Arms out in T, let chest open to floor",   sets: "90 sec",      rest: 10, work: 90, muscles: [] },
+          { name: "Thread-the-needle",          note: "On all fours, thread arm through, hold",   sets: "75 sec each", rest: 10, work: 75, muscles: [] },
+          { name: "Cross-body shoulder stretch",note: "Pull arm across chest, hold at elbow",     sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Chest doorframe stretch",    note: "One arm on doorframe, rotate body away",   sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Supine spinal twist",        note: "Both shoulders on floor, breathe out",     sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Diaphragmatic breathing",    note: "4 sec in, 6 sec out — full reset",         sets: "10 breaths",  rest: 10, work: 60, muscles: [] },
+        ]
+      }
+    ]
+  },
+  {
+    id: 21,
+    title: "Complete cyclist's session",
+    tag: "Routine 21",
+    duration: 60,
+    sport: 'cycle',
+    focus: "Leg volume · Calf endurance · Anti-fatigue stability",
+    split: { upper: 10, lower: 65, core: 25 },
+    tip: "Seated and standing calf raises target different calf heads. Both matter for pedalling power and injury prevention over long distances — don't skip either.",
+    phases: [
+      {
+        label: "Warm-up", duration: "10 min",
+        exercises: [
+          { name: "Hip flexor lunge hold", note: "Deep lunge, arms overhead",            sets: "45 sec each side",  rest: 10, work: 45, muscles: [] },
+          { name: "Glute activation walk", note: "Mini lateral steps, tension on hips",  sets: "30 steps each way", rest: 15, work: 30, muscles: [] },
+          { name: "Leg swings",            note: "Forward/back then side-to-side",        sets: "12 each direction", rest: 15, work: 30, muscles: [] },
+          { name: "Hip circles",           note: "Standing, big controlled circles",      sets: "12 each side",      rest: 15, work: 30, muscles: [] },
+          { name: "Bodyweight squat",      note: "Slow and controlled, full depth",       sets: "15 reps",           rest: 20, work: 40, muscles: [] },
+          { name: "Cat-cow",               note: "Slow spinal wave, breathe into it",     sets: "10 reps",           rest: 15, work: 30, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "40 min",
+        exercises: [
+          { name: "Bulgarian split squat",  note: "Front thigh parallel, 3 sec descent",          sets: "4 × 12 each",  rest: 75, work: 55, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Hip stabilisers"}] },
+          { name: "Hip hinge (good morning)",note: "Flat back, hinge at hips, feel hamstrings",   sets: "4 × 12",       rest: 60, work: 40, muscles: [{k:"lower",n:"Hamstrings"},{k:"lower",n:"Glutes"},{k:"core",n:"Lower back"}] },
+          { name: "Sumo squat",             note: "Wide stance, toes out 45°, sit deep",           sets: "4 × 15",       rest: 60, work: 45, muscles: [{k:"lower",n:"Inner thighs"},{k:"lower",n:"Glutes"},{k:"lower",n:"Quads"}] },
+          { name: "Single-leg glute bridge",note: "One foot raised, drive through heel",           sets: "4 × 12 each",  rest: 60, work: 50, muscles: [{k:"lower",n:"Glutes"},{k:"lower",n:"Hamstrings"},{k:"core",n:"Core stability"}] },
+          { name: "Wall sit",               note: "90° at knees, back flat on wall",               sets: "4 × 60 sec",   rest: 60, work: 60, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"lower",n:"Calves"}] },
+          { name: "Seated calf raise",      note: "Sit on chair, heavy object on thighs",          sets: "4 × 20",       rest: 45, work: 45, muscles: [{k:"lower",n:"Soleus"},{k:"lower",n:"Calves"}] },
+          { name: "Single-leg calf raise",  note: "Full range, 3 sec lowering, hold wall",         sets: "4 × 15 each",  rest: 45, work: 40, muscles: [{k:"lower",n:"Calves"},{k:"lower",n:"Ankle stabilisers"}] },
+          { name: "Bird dog",               note: "Opposite arm + leg, hold 3 sec",                sets: "3 × 10 each",  rest: 60, work: 40, muscles: [{k:"core",n:"Lower back"},{k:"core",n:"Core stability"},{k:"lower",n:"Glutes"}] },
+          { name: "Side plank",             note: "Stack feet or stagger, hips lifted",            sets: "3 × 40 sec each", rest: 60, work: 40, muscles: [{k:"core",n:"Obliques"},{k:"core",n:"Abs"},{k:"upper",n:"Shoulders"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "10 min",
+        exercises: [
+          { name: "Pigeon pose",           note: "Deep glute + hip flexor release",    sets: "90 sec each", rest: 10, work: 90, muscles: [] },
+          { name: "Standing quad stretch", note: "Hold wall, pull heel to glute",       sets: "75 sec each", rest: 10, work: 75, muscles: [] },
+          { name: "Seated forward fold",   note: "Hinge from hips, spine long",         sets: "75 sec",      rest: 10, work: 75, muscles: [] },
+          { name: "Figure-4 stretch",      note: "Cross ankle over knee, flex foot",    sets: "75 sec each", rest: 10, work: 75, muscles: [] },
+          { name: "Child's pose",          note: "Arms forward, breathe into lower back", sets: "60 sec",    rest: 10, work: 60, muscles: [] },
+          { name: "Supine spinal twist",   note: "Both shoulders on floor, breathe out", sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+        ]
+      }
+    ]
+  },
+  {
+    id: 22,
+    title: "Athletic conditioning",
+    tag: "Routine 22",
+    duration: 60,
+    sport: 'all',
+    focus: "Full-body conditioning · Strength + endurance",
+    split: { upper: 30, lower: 42, core: 28 },
+    tip: "Rest 90 seconds between exercises, not less. This keeps movement quality high. A sloppy rep teaches a sloppy movement pattern — quality over pace.",
+    phases: [
+      {
+        label: "Warm-up", duration: "10 min",
+        exercises: [
+          { name: "March in place",           note: "High knees, relaxed shoulders",       sets: "60 sec",            rest: 10, work: 60, muscles: [] },
+          { name: "Inchworm + push-up",        note: "Walk out, one push-up, walk back",   sets: "8 reps",            rest: 20, work: 45, muscles: [] },
+          { name: "World's greatest stretch",  note: "Hip flexor + thoracic rotation",     sets: "8 each side",       rest: 20, work: 45, muscles: [] },
+          { name: "Dynamic hip circles",       note: "Standing, big slow circles",          sets: "12 each side",      rest: 15, work: 30, muscles: [] },
+          { name: "Arm circles",               note: "Small to large, both directions",     sets: "20 each direction",  rest: 15, work: 25, muscles: [] },
+          { name: "Thoracic rotation",         note: "Seated, hands behind head, slow",     sets: "10 each side",      rest: 20, work: 30, muscles: [] },
+        ]
+      },
+      {
+        label: "Main work", duration: "40 min",
+        exercises: [
+          { name: "Squat + calf raise",         note: "Stand from squat, rise onto toes, squeeze calves",   sets: "4 × 15",           rest: 60, work: 50, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"lower",n:"Calves"}] },
+          { name: "Push-up with shoulder tap",  note: "Tap opposite shoulder after each rep",               sets: "4 × 10",           rest: 60, work: 40, muscles: [{k:"upper",n:"Chest"},{k:"upper",n:"Shoulders"},{k:"core",n:"Core stability"}] },
+          { name: "Reverse lunge + knee drive", note: "Step back, drive knee up explosively on return",     sets: "4 × 12 each",      rest: 60, work: 50, muscles: [{k:"lower",n:"Quads"},{k:"lower",n:"Glutes"},{k:"core",n:"Hip flexors"}] },
+          { name: "Table row (overhand)",       note: "Pull chest to edge, hold 1 sec at top",              sets: "4 × 12",           rest: 60, work: 45, muscles: [{k:"upper",n:"Upper back"},{k:"upper",n:"Biceps"},{k:"upper",n:"Lats"}] },
+          { name: "Glute bridge with march",    note: "Bridge hold, alternate lifting each knee",            sets: "3 × 12 each",      rest: 60, work: 45, muscles: [{k:"lower",n:"Glutes"},{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"}] },
+          { name: "Plank to downward dog",      note: "From plank, push hips up and back, return",          sets: "3 × 12",           rest: 60, work: 45, muscles: [{k:"core",n:"Abs"},{k:"upper",n:"Shoulders"},{k:"lower",n:"Hamstrings"}] },
+          { name: "Bicycle crunch",             note: "Slow and deliberate, full twist, no neck strain",    sets: "4 × 15 each side", rest: 60, work: 45, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Obliques"},{k:"core",n:"Hip flexors"}] },
+          { name: "Hollow body hold",           note: "Back flat, arms and legs low but not touching",      sets: "3 × 40 sec",       rest: 60, work: 40, muscles: [{k:"core",n:"Abs"},{k:"core",n:"Hip flexors"},{k:"core",n:"Core stability"}] },
+          { name: "Tricep dip",                 note: "Hands on chair edge, elbows track straight back",   sets: "3 × 12",           rest: 60, work: 35, muscles: [{k:"upper",n:"Triceps"},{k:"upper",n:"Shoulders"},{k:"upper",n:"Chest"}] },
+          { name: "Superman hold",              note: "Prone, lift everything, hold 3 sec",                 sets: "3 × 12",           rest: 60, work: 40, muscles: [{k:"upper",n:"Upper back"},{k:"upper",n:"Rear delts"},{k:"core",n:"Lower back"}] },
+        ]
+      },
+      {
+        label: "Cool-down", duration: "10 min",
+        exercises: [
+          { name: "Pigeon pose",             note: "Deep glute + hip flexor release",     sets: "75 sec each", rest: 10, work: 75, muscles: [] },
+          { name: "Seated forward fold",     note: "Hinge from hips, spine long",          sets: "75 sec",      rest: 10, work: 75, muscles: [] },
+          { name: "Spinal twist",            note: "Lying, knees drop side to side",       sets: "60 sec each", rest: 10, work: 60, muscles: [] },
+          { name: "Chest doorframe stretch", note: "One arm on doorframe, rotate away",    sets: "45 sec each", rest: 10, work: 45, muscles: [] },
+          { name: "Child's pose",            note: "Arms forward, breathe into lower back", sets: "75 sec",     rest: 10, work: 75, muscles: [] },
+          { name: "Diaphragmatic breathing", note: "4 sec in, 6 sec out — full reset",     sets: "8 breaths",   rest: 10, work: 50, muscles: [] },
         ]
       }
     ]

@@ -561,6 +561,49 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .history-nav-btn:active { opacity: 0.7; }
 .history-nav-btn svg { width: 13px; height: 13px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
+/* Duration tabs */
+.duration-tabs {
+  display: flex;
+  gap: 6px;
+  margin: 16px 0 4px;
+}
+.dur-tab {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text2);
+  background: var(--surface2);
+  transition: all 0.15s;
+}
+.dur-tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+.dur-tab:active { opacity: 0.85; }
+
+/* Sport badge */
+.sport-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 7px 3px 5px;
+  border-radius: 20px;
+  margin-top: 5px;
+  letter-spacing: 0.02em;
+}
+.sport-badge svg {
+  width: 12px; height: 12px;
+  flex-shrink: 0;
+}
+.sport-run   { background: rgba(22,163,74,0.10);  color: #16A34A; }
+.sport-swim  { background: rgba(3,105,161,0.10);   color: #0369A1; }
+.sport-cycle { background: rgba(234,88,12,0.10);   color: #EA580C; }
+.sport-all   { background: var(--surface2);         color: var(--text2); }
+
 /* Hub cards */
 .routine-card {
   background: var(--bg);
