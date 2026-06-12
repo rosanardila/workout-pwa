@@ -427,11 +427,42 @@ const EXERCISES = [
   }
 ];
 
-// ── Favourites ───────────────────────────────────────────────────────
+// ── Video IDs ─────────────────────────────────────────────────────────
 
-function watchURL(name) {
-  return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(name + ' technique bodyweight');
-}
+const EXERCISE_VIDEOS = {
+  'squat':                  'dhhN_6B5nxE',
+  'bulgarian-split-squat':  'dLPUEhOe7EI',
+  'romanian-deadlift':      'ecuZtKTNI9U',
+  'glute-bridge':           'X_IGw8U_e38',
+  'single-leg-glute-bridge':'cSzpMpxRnjc',
+  'wall-sit':               'mDdLC-yKudY',
+  'hip-hinge':              'rzJ5ElPL0BE',
+  'sumo-squat':             'oIxIHc9Q1q4',
+  'reverse-lunge':          'VpwW8MpnJx4',
+  'single-leg-calf-raise':  'xXltjBKpNOI',
+  'deficit-calf-raise':     'cjS0bn7A29s',
+  'seated-calf-raise':      '4f_-CJVbyxg',
+  'push-up':                'wD1M-f69Yy8',
+  'wide-push-up':           'B-wzr02OO1g',
+  'diamond-push-up':        'PPTj-MW2tcs',
+  'pike-push-up':           '0cT6ug3WVn4',
+  'table-row-overhand':     'VO-pt_XgFho',
+  'table-row-underhand':    'O0sOErhDazk',
+  'tricep-dip':             '4ua3MzaU0QU',
+  'superman-hold':          'uexOGyxLr7E',
+  'push-up-shoulder-tap':   'DaNXSDvr468',
+  'plank':                  'oPgZR4jlZi4',
+  'side-plank':             'sH5PiIUjDW8',
+  'hollow-body-hold':       'KgkU7yAEW90',
+  'bicycle-crunch':         'hP-ol0LxLZ8',
+  'dead-bug':               'wCg6qs5L3-U',
+  'bird-dog':               'LWdKrBi9Lks',
+  'leg-raise':              'Ti-hSmyPb5U',
+  'glute-bridge-march':     'id8cJRlFxLA',
+  'plank-to-downward-dog':  'X0T_dBnfxKk',
+};
+
+// ── Favourites ───────────────────────────────────────────────────────
 
 const EX_FAVS_KEY = 'exercise_favorites';
 let exFavs = JSON.parse(localStorage.getItem(EX_FAVS_KEY) || '[]');
@@ -516,10 +547,14 @@ function renderExercises() {
         <p class="lib-card-desc">${ex.description}</p>
         <div class="lib-card-tips-label">Technique</div>
         <ul class="lib-card-tips">${tipItems}</ul>
-        <a href="${watchURL(ex.name)}" target="_blank" class="lib-watch-btn" aria-label="Watch ${ex.name} on YouTube">
-          <svg viewBox="0 0 16 16"><path d="M6.5 4.5l5 3.5-5 3.5V4.5z"/><rect width="14" height="14" x="1" y="1" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
-          Watch on YouTube
-        </a>
+        ${EXERCISE_VIDEOS[ex.id] ? `
+        <div class="vid-thumb-wrap">
+          <img class="vid-thumb" src="https://img.youtube.com/vi/${EXERCISE_VIDEOS[ex.id]}/hqdefault.jpg" alt="${ex.name}" loading="lazy">
+          <button class="vid-play-btn" aria-label="Play ${ex.name} video">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="rgba(31,24,192,0.88)"/><polygon points="20,16 36,24 20,32" fill="white"/></svg>
+          </button>
+        </div>
+        ` : ''}
       </div>`;
 
     const header = card.querySelector('.lib-card-header');
@@ -534,6 +569,14 @@ function renderExercises() {
       e.stopPropagation();
       toggleExFav(ex.id);
     });
+
+    const vidWrap = card.querySelector('.vid-thumb-wrap');
+    if (vidWrap) {
+      vidWrap.addEventListener('click', () => {
+        const id = EXERCISE_VIDEOS[ex.id];
+        vidWrap.innerHTML = `<iframe class="vid-embed" src="https://www.youtube.com/embed/${id}?autoplay=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      });
+    }
 
     list.appendChild(card);
   });

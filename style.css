@@ -925,23 +925,43 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .lib-card .lib-card-tips li { color: rgba(31, 24, 192, 0.62); }
 .lib-card .lib-card-tips-label { color: rgba(31, 24, 192, 0.38); }
 
-.lib-watch-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+/* ── Inline video player ──────────────────────────────────────────── */
+.vid-thumb-wrap {
+  position: relative;
   margin-top: 14px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #1F18C0;
-  background: rgba(31, 24, 192, 0.08);
-  border: 1px solid rgba(31, 24, 192, 0.16);
-  border-radius: 999px;
-  padding: 7px 14px;
-  text-decoration: none;
-  transition: opacity 0.15s;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+  aspect-ratio: 16 / 9;
 }
-.lib-watch-btn:active { opacity: 0.7; }
-.lib-watch-btn svg { width: 13px; height: 13px; fill: #1F18C0; flex-shrink: 0; }
+.vid-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vid-play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.12);
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.vid-play-btn:active { background: rgba(0, 0, 0, 0.28); }
+.vid-play-btn svg { width: 52px; height: 52px; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5)); }
+.vid-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
 /* ── History card internals ── */
 .history-card .history-chevron     { stroke: rgba(31, 24, 192, 0.22); }
