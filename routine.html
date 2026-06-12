@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#F7F5F0">
+  <title>Routine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Timer overlay -->
+  <div id="timer-overlay">
+    <div class="timer-phase" id="t-phase">Warm-up</div>
+    <div class="timer-ex-name" id="t-name">Inchworm</div>
+    <div class="timer-ex-note" id="t-note">Walk hands to plank and back</div>
+
+    <div class="timer-progress-bar">
+      <div class="timer-progress-fill" id="t-progress" style="width:0%"></div>
+    </div>
+
+    <div class="timer-ring">
+      <svg viewBox="0 0 180 180">
+        <circle class="timer-ring-bg" cx="90" cy="90" r="80"/>
+        <circle class="timer-ring-fg work" id="t-ring" cx="90" cy="90" r="80"
+          stroke-dasharray="502" stroke-dashoffset="0"/>
+      </svg>
+      <div class="timer-count">
+        <div class="timer-seconds" id="t-sec">30</div>
+        <div class="timer-mode-label work" id="t-mode">GO</div>
+      </div>
+    </div>
+
+    <div class="timer-set-info" id="t-set-info">Set 1 of 3</div>
+
+    <div class="timer-controls">
+      <button class="timer-btn-sec" id="t-prev" aria-label="Previous exercise">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="timer-btn-main" id="t-playpause" aria-label="Pause">
+        <svg id="t-play-icon" viewBox="0 0 24 24" style="display:none"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
+        <svg id="t-pause-icon" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
+      </button>
+      <button class="timer-btn-sec" id="t-skip" aria-label="Skip">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <div class="timer-next-up" id="t-next"></div>
+
+    <button style="margin-top:32px;font-size:13px;color:var(--text3);padding:8px 16px;" id="t-quit">End workout</button>
+  </div>
+
+  <!-- Reps mode overlay -->
+  <div id="reps-overlay">
+    <div class="timer-progress-bar" style="width:100%;max-width:280px">
+      <div class="timer-progress-fill" id="rp-progress" style="width:0%"></div>
+    </div>
+
+    <div class="timer-phase" id="rp-phase" style="margin-top:20px">Warm-up</div>
+    <div class="timer-ex-name" id="rp-name">Exercise</div>
+    <div class="timer-ex-note" id="rp-note">Note</div>
+
+    <div class="timer-set-info" id="rp-set-info"></div>
+
+    <div id="rp-rep-section">
+      <div class="reps-target" id="rp-target">Target: 15</div>
+      <div class="reps-input-row">
+        <button class="reps-adj" id="rp-minus">−</button>
+        <div class="reps-number" id="rp-count">15</div>
+        <button class="reps-adj" id="rp-plus">+</button>
+      </div>
+    </div>
+    <div id="rp-sets-display" style="display:none;font-size:18px;font-weight:600;color:var(--text2);margin:8px 0 16px"></div>
+
+    <button class="reps-done-btn" id="rp-done">Done</button>
+
+    <div class="timer-next-up" id="rp-next" style="margin-top:20px"></div>
+
+    <div class="timer-controls" style="margin-top:20px">
+      <button class="timer-btn-sec" id="rp-prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="timer-btn-sec" id="rp-skip" aria-label="Skip">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <button id="rp-quit" style="margin-top:28px;font-size:13px;color:var(--text3);padding:8px 16px;">End workout</button>
+  </div>
+
+  <!-- Routine page -->
+  <div class="page" id="routine-page">
+    <div class="top-bar">
+      <a href="index.html" class="back-btn" aria-label="Back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </a>
+      <div style="flex:1">
+        <div style="font-size:11px;color:var(--text3);font-weight:600;letter-spacing:0.08em;text-transform:uppercase" id="r-tag"></div>
+        <div style="font-size:17px;font-weight:700;margin-top:1px" id="r-title"></div>
+      </div>
+    </div>
+
+    <div style="margin: 8px 0 4px" id="r-split"></div>
+
+    <div id="r-phases"></div>
+
+    <div id="r-tip"></div>
+  </div>
+
+  <div id="start-area">
+    <div class="mode-select">
+      <button class="mode-btn active" data-mode="timer">Timer</button>
+      <button class="mode-btn" data-mode="reps">Reps</button>
+    </div>
+    <button class="start-btn" id="start-btn">Start workout</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="routine.js"></script>
+</body>
+</html>

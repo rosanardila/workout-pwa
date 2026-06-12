@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#F7F5F0">
+  <title>Workout History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="top-bar">
+      <a href="index.html" class="back-btn" aria-label="Back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </a>
+      <div style="flex:1">
+        <div style="font-size:11px;color:var(--text3);font-weight:600;letter-spacing:0.08em;text-transform:uppercase">All sessions</div>
+        <div style="font-size:17px;font-weight:700;margin-top:1px">History</div>
+      </div>
+      <button id="export-btn" class="export-btn">Export CSV</button>
+    </div>
+
+    <div id="history-list"></div>
+    <div id="history-empty" style="display:none;text-align:center;padding:64px 0;color:var(--text3);font-size:14px;line-height:1.6">
+      No workouts logged yet.<br>Complete a workout to see it here.
+    </div>
+  </div>
+  <script src="history.js"></script>
+</body>
+</html>

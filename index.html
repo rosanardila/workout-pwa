@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#F7F5F0">
+  <title>Full Body Workout</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="hub-top">
+      <div class="hub-header" style="padding-top:0">
+        <p class="hub-eyebrow">Apartment · Bodyweight · 30 min</p>
+        <h1 class="hub-title">Full Body<br>Workout Plan</h1>
+        <p class="hub-sub">8 routines — full body, lower, upper, core, and mobility. No equipment needed, just a chair and optionally a table.</p>
+      </div>
+      <a href="history.html" class="history-nav-btn">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+        History
+      </a>
+    </div>
+
+    <div class="muscle-legend">
+      <div class="muscle-legend-item"><div class="legend-dot" style="background:var(--upper)"></div>Upper</div>
+      <div class="muscle-legend-item"><div class="legend-dot" style="background:var(--lower)"></div>Lower</div>
+      <div class="muscle-legend-item"><div class="legend-dot" style="background:var(--core)"></div>Core</div>
+    </div>
+
+    <div id="cards"></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
