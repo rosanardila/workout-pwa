@@ -595,6 +595,30 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .chevron { flex-shrink: 0; }
 .chevron svg { width: 18px; height: 18px; stroke: var(--text3); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
+.heart-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+.heart-btn:active { transform: scale(0.82); }
+.heart-btn svg {
+  width: 18px; height: 18px;
+  stroke: var(--text3);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.15s, fill 0.15s;
+}
+.heart-btn.active svg {
+  stroke: var(--lower);
+  fill: var(--lower);
+}
+
 /* Hub header */
 .hub-header { padding: 32px 0 8px; }
 .hub-eyebrow {
