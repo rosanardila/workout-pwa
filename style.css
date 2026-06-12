@@ -23,18 +23,18 @@
   --border:      rgba(255, 255, 255, 0.20);
   --card-border: rgba(255, 255, 255, 0.20);
   --text:        #FFFFFF;
-  --text2:       rgba(255, 255, 255, 0.60);
-  --text3:       rgba(255, 255, 255, 0.30);
+  --text2:       rgba(255, 255, 255, 0.75);
+  --text3:       rgba(255, 255, 255, 0.45);
   --accent:      #FFFFFF;
   --accent-dim:  rgba(255, 255, 255, 0.10);
 
-  /* Category — opacity-based differentiation, palette-compliant */
+  /* Category — strongly differentiated on Klein blue background */
   --upper:    #FFFFFF;
-  --upper-bg: rgba(255, 255, 255, 0.12);
-  --lower:    rgba(255, 255, 255, 0.80);
-  --lower-bg: rgba(255, 255, 255, 0.06);
-  --core:     rgba(255, 255, 255, 0.50);
-  --core-bg:  rgba(255, 255, 255, 0.04);
+  --upper-bg: rgba(255, 255, 255, 0.18);
+  --lower:    rgba(255, 255, 255, 0.65);
+  --lower-bg: rgba(255, 255, 255, 0.10);
+  --core:     rgba(255, 255, 255, 0.30);
+  --core-bg:  rgba(255, 255, 255, 0.06);
 
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -93,12 +93,12 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   border-radius: 999px;
   font-weight: 500;
 }
-/* Upper: solid white — most visually prominent */
-.tag-upper { background: var(--white); color: var(--blue); }
-/* Lower: ghost-fill */
-.tag-lower { background: var(--lower-bg); border: 1px solid var(--white-30); color: var(--white-80); }
-/* Core: ghost subtle */
-.tag-core  { background: transparent; border: 1px solid var(--white-20); color: var(--white-50); }
+/* Upper: solid white — strongest */
+.tag-upper { background: var(--white); color: var(--blue); font-weight: 600; }
+/* Lower: white-tinted background + bright text */
+.tag-lower { background: rgba(255,255,255,0.22); color: var(--white); }
+/* Core: outline only + visible text */
+.tag-core  { background: transparent; border: 1px solid rgba(255,255,255,0.40); color: var(--white-80); }
 
 /* ── Split bar ────────────────────────────────────────────────────── */
 .split-bar {
@@ -722,7 +722,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--white-50);
+  color: var(--white-80);
   margin-bottom: 10px;
 }
 .hub-title {
@@ -732,7 +732,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   line-height: 1.0;
   letter-spacing: -0.01em;
 }
-.hub-sub { font-size: 14px; color: var(--white-60); margin-top: 10px; line-height: 1.6; }
+.hub-sub { font-size: 14px; color: var(--white-80); margin-top: 10px; line-height: 1.6; }
 
 .muscle-legend {
   display: flex;
@@ -860,6 +860,104 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   color: var(--white-60);
   line-height: 1.55;
 }
+
+/* ── White cards (routines, exercises, library, history) ──────────── */
+/* CSS variable cascade handles most of the inversion automatically;  */
+/* hardcoded var(--white-*) references need explicit overrides.        */
+
+.routine-card,
+.ex-card,
+.lib-card,
+.history-card {
+  /* Remap semantic tokens to blue-on-white */
+  --text2:    rgba(31, 24, 192, 0.60);
+  --text3:    rgba(31, 24, 192, 0.30);
+  /* Category colors → blue-based */
+  --upper:    #1F18C0;
+  --upper-bg: rgba(31, 24, 192, 0.10);
+  --lower:    rgba(31, 24, 192, 0.65);
+  --lower-bg: rgba(31, 24, 192, 0.06);
+  --core:     rgba(31, 24, 192, 0.40);
+  --core-bg:  rgba(31, 24, 192, 0.04);
+  background: #FFFFFF;
+  border-color: rgba(31, 24, 192, 0.12);
+  color: #1F18C0;
+}
+
+/* Warmup/cooldown subtle border stays subtle */
+.ex-card.warmup,
+.ex-card.cooldown { border-color: rgba(31, 24, 192, 0.07); }
+
+/* Active states */
+.routine-card:active { background: rgba(31, 24, 192, 0.04); border-color: rgba(31, 24, 192, 0.18); }
+.lib-card:active     { background: rgba(31, 24, 192, 0.04); border-color: rgba(31, 24, 192, 0.18); }
+.history-card:active { background: rgba(31, 24, 192, 0.04); border-color: rgba(31, 24, 192, 0.18); }
+
+/* ── Routine card internals ── */
+.routine-card .routine-num {
+  background: rgba(31, 24, 192, 0.08);
+  color: #1F18C0;
+}
+.routine-card .routine-card-last { color: rgba(31, 24, 192, 0.50); }
+.routine-card .chevron svg       { stroke: rgba(31, 24, 192, 0.22); }
+
+/* Sport badge flipped for white card */
+.routine-card .sport-badge {
+  background: rgba(31, 24, 192, 0.07);
+  color: #1F18C0;
+  border-color: rgba(31, 24, 192, 0.14);
+}
+
+/* ── Exercise card internals (routine page) ── */
+.ex-card .ex-name { color: #1F18C0; }
+
+/* ── Muscle tag overrides inside white cards ── */
+.routine-card .tag-upper,
+.ex-card .tag-upper,
+.lib-card .tag-upper {
+  background: rgba(31, 24, 192, 0.10);
+  color: #1F18C0;
+  border: none;
+}
+.routine-card .tag-lower,
+.ex-card .tag-lower,
+.lib-card .tag-lower {
+  background: rgba(31, 24, 192, 0.12);
+  border: none;
+  color: rgba(31, 24, 192, 0.80);
+  font-weight: 500;
+}
+.routine-card .tag-core,
+.ex-card .tag-core,
+.lib-card .tag-core {
+  background: transparent;
+  border-color: rgba(31, 24, 192, 0.30);
+  color: rgba(31, 24, 192, 0.60);
+}
+
+/* ── Heart button inside white cards ── */
+.routine-card .heart-btn svg,
+.lib-card .heart-btn svg    { stroke: rgba(31, 24, 192, 0.22); }
+.routine-card .heart-btn.active svg,
+.lib-card .heart-btn.active svg {
+  stroke: #1F18C0;
+  fill: #1F18C0;
+}
+
+/* ── Library card internals ── */
+.lib-card .ex-chevron      { stroke: rgba(31, 24, 192, 0.22); }
+.lib-card .lib-card-body   { border-top-color: rgba(31, 24, 192, 0.08); }
+.lib-card .lib-card-desc   { color: rgba(31, 24, 192, 0.62); }
+.lib-card .lib-card-tips li { color: rgba(31, 24, 192, 0.62); }
+.lib-card .lib-card-tips-label { color: rgba(31, 24, 192, 0.38); }
+
+/* ── History card internals ── */
+.history-card .history-chevron     { stroke: rgba(31, 24, 192, 0.22); }
+.history-card .history-exercises   { border-top-color: rgba(31, 24, 192, 0.08); }
+.history-card .history-ex-row      { color: rgba(31, 24, 192, 0.55); }
+.history-card .history-ex-row span:first-child { color: #1F18C0; }
+.history-card .history-mode-badge.reps  { background: #1F18C0; color: #FFFFFF; }
+.history-card .history-mode-badge.timer { background: rgba(31, 24, 192, 0.08); color: rgba(31, 24, 192, 0.55); }
 
 /* ── Done screen ──────────────────────────────────────────────────── */
 .done-screen {

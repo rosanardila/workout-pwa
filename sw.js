@@ -1,4 +1,4 @@
-const CACHE = 'workout-v11';
+const CACHE = 'workout-v12';
 const ASSETS = [
   './',
   './index.html',
@@ -13,7 +13,9 @@ const ASSETS = [
   './library.js',
   './manifest.json',
   './favicon.svg',
-  './apple-touch-icon-v2.png'
+  './apple-touch-icon-v3.png',
+  './icons/icon-192.png',
+  './icons/icon-512.png'
 ];
 
 self.addEventListener('install', e => {

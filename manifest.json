@@ -1,14 +1,14 @@
 {
-  "name": "Full Body Workout",
-  "short_name": "Workout",
-  "description": "8 apartment-friendly bodyweight routines — full body, lower, upper, core, and mobility",
+  "name": "Músculos",
+  "short_name": "Músculos",
+  "description": "22 apartment-friendly bodyweight routines — tailored for running, swimming, cycling, or general fitness.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#1F18C0",
+  "theme_color": "#1F18C0",
   "orientation": "portrait-primary",
   "icons": [
-    { "src": "apple-touch-icon-v2.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "apple-touch-icon-v3.png", "sizes": "180x180", "type": "image/png" },
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
     { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
